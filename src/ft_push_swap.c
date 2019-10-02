@@ -73,9 +73,12 @@ int						main(int ac, char **av)
 	else if (ac == 2)
 	{
 		i = 0;
+
 		input = ft_strsplit(av[1], ' ');
 		while (input[i])
 			i++;
+		if (i == 0)
+			return (0);
 		i++;
 		av = (char**)malloc(sizeof(char*) * i);
 		j = 1;

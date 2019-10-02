@@ -12,36 +12,7 @@
 
 #include "../includes/ft_push_swap.h"
 
-/*static void				ft_print_stack(t_stack *stack)
-{
-	t_elem				*elem;
-
-	if (!stack || !stack->head || !(elem = stack->head))
-	{
-		printf("\tNULL\n");
-		return ;
-	}
-	if (stack->size == 1)
-	{
-		printf("HEAD & TAIL  [%3d <- {%3d} -> %3d]\n",
-			elem->prev->num, elem->num, elem->next->num);
-		return ;
-	}
-	while (elem != stack->tail)
-	{
-		if (elem == stack->head)
-			printf("\tHEAD");
-		else
-			printf("\t    ");
-		printf(" [%3d <- {%3d} -> %3d]\n",
-			elem->prev->num, elem->num, elem->next->num);
-		elem = elem->next;
-	}
-	printf("\tTAIL [%3d <- {%3d} -> %3d]\n",
-			elem->prev->num, elem->num, elem->next->num);
-}
-*/
-t_stack			*ft_init_stack_a(int ac, char **av)
+t_stack		*ft_init_stack_a(int ac, char **av)
 {
 	t_elem				*elem;
 	t_stack				*stack;
@@ -61,7 +32,7 @@ t_stack			*ft_init_stack_a(int ac, char **av)
 	return (stack);
 }
 
-void				ft_make_command(t_push_swap *ps, char *line)
+void		ft_make_command(t_push_swap *ps, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_sa(ps);
@@ -89,7 +60,7 @@ void				ft_make_command(t_push_swap *ps, char *line)
 		ft_error();
 }
 
-int						main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_push_swap			ps;
 	char				*line;
@@ -99,13 +70,18 @@ int						main(int ac, char **av)
 	int					j;
 
 	if (ac == 1)
+	{
+		ft_error();
 		return (0);
+	}
 	else if (ac == 2)
 	{
 		i = 0;
 		input = ft_strsplit(av[1], ' ');
 		while (input[i])
 			i++;
+		if (i == 0)
+			return (0);
 		i++;
 		av = (char**)malloc(sizeof(char*) * i);
 		j = 1;
@@ -122,10 +98,9 @@ int						main(int ac, char **av)
 	{
 		if (ret == -1)
 			ft_error();
-		ft_make_command(&ps, line);		
+		ft_make_command(&ps, line);
 	}
 	ps.is_sorted = ft_is_sorted(&ps);
-	(ps.is_sorted == 1) ? printf("\e[32mOK\e[0m\n") : printf("\e[33mKO\e[0m\n");
+	(ps.is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
 	return (0);
 }
-

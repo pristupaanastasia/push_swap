@@ -14,6 +14,6 @@
 
 void					ft_error(void)
 {
-	printf("\e[31mError\e[0m\n");
+	ft_putendl_fd("Error", 2);
 	exit(EXIT_FAILURE);
 }

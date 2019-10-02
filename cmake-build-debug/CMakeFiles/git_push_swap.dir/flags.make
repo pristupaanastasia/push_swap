@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/samymone/git_push_swap/. -I/Users/samymone/git_push_swap/includes -I/Users/samymone/git_push_swap/libft -I/Users/samymone/git_push_swap/libft/includes -I/Users/samymone/git_push_swap/libft/srcs -I/Users/samymone/git_push_swap/src 
+C_INCLUDES = -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/. -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/includes -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/libft -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/libft/includes -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/libft/srcs -I/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src 
 
