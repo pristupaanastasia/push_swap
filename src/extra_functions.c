@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   extra_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 13:44:32 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 13:44:33 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/02 21:44:30 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
-
-
+#include "../includes/ft_push_swap.h"
 
 int			max_elem(t_stack *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:25:46 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 16:41:10 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/02 21:44:21 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 
 t_elem					*ft_newelem(int num)
 {

@@ -6,11 +6,11 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:53:51 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:34:16 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/02 21:49:12 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 
 void				ft_print_stack(t_stack *stack)
 {
@@ -64,7 +64,6 @@ static t_stack			*ft_init_stack_a(int ac, char **av)
 int						main(int ac, char **av)
 {
 	t_push_swap			ps;
-	char				*line;
 	char				**input;
 	int 				i;
 	int					j;

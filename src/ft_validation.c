@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:26:48 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/01 14:26:49 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/02 21:44:19 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 
 static unsigned char	ft_all_int(int ac, char **av)
 {

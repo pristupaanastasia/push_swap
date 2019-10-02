@@ -6,14 +6,14 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 16:10:51 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 17:15:38 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/02 21:45:35 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
-# include "libft.h"
+# include "../libft/includes/libft.h"
 # include <stdio.h>
 
 # define WHILE while (ps->a->head->num == mid->num || ps->a->head->num == min->num \

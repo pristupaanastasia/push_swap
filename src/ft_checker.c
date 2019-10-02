@@ -6,11 +6,11 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:26:24 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 17:17:45 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/02 21:51:25 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 
 /*static void				ft_print_stack(t_stack *stack)
 {
@@ -41,7 +41,7 @@
 			elem->prev->num, elem->num, elem->next->num);
 }
 */
-static t_stack			*ft_init_stack_a(int ac, char **av)
+t_stack			*ft_init_stack_a(int ac, char **av)
 {
 	t_elem				*elem;
 	t_stack				*stack;
@@ -61,7 +61,7 @@ static t_stack			*ft_init_stack_a(int ac, char **av)
 	return (stack);
 }
 
-static void				ft_make_command(t_push_swap *ps, char *line)
+void				ft_make_command(t_push_swap *ps, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_sa(ps);
@@ -89,7 +89,7 @@ static void				ft_make_command(t_push_swap *ps, char *line)
 		ft_error();
 }
 
-/*int						main(int ac, char **av)
+int						main(int ac, char **av)
 {
 	t_push_swap			ps;
 	char				*line;
@@ -117,24 +117,15 @@ static void				ft_make_command(t_push_swap *ps, char *line)
 		ac = i;
 	}
 	ft_bzero(&ps, sizeof(t_push_swap));
-	ft_printf("STACK A: %p\n", ps.a);
 	ps.a = ft_init_stack_a(ac, av);
-	ft_printf("[STACK A]\n");
-	ft_print_stack(ps.a);
 	while ((ret = get_next_line(0, &line)))
 	{
 		if (ret == -1)
 			ft_error();
-		ft_printf("\e[33mPerforming command %s...\e[0m\n", line);
-		ft_make_command(&ps, line);
-		ft_printf("\e[32m%s command done!\e[0m\n", line);
-		ft_printf("[STACK A]\n");
-		ft_print_stack(ps.a);
-		ft_printf("[STACK B]\n");
-		ft_print_stack(ps.b);
-		ps.is_sorted = ft_is_sorted(&ps);
-		(ps.is_sorted == 1) ? ft_printf("\e[32mOK\e[0m\n") : ft_printf("\e[33mKO\e[0m\n");
+		ft_make_command(&ps, line);		
 	}
+	ps.is_sorted = ft_is_sorted(&ps);
+	(ps.is_sorted == 1) ? printf("\e[32mOK\e[0m\n") : printf("\e[33mKO\e[0m\n");
 	return (0);
 }
-*/
+

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sselusa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 11:28:25 by sleonard          #+#    #+#             */
-/*   Updated: 2019/05/23 17:04:00 by sleonard         ###   ########.fr       */
+/*   Updated: 2019/10/02 21:45:18 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-# include "ft_printf.h"
+#include "../../includes/ft_push_swap.h"
 
 typedef struct			s_flags
 {

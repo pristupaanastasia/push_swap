@@ -6,11 +6,11 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 19:12:06 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:34:36 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/02 21:44:17 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 #include <stdio.h>
 
 int			mid_sorting(t_stack *stack)
