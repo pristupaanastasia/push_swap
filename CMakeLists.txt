@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(git_push_swap C)
+project(FINAL_OF_PUSH_SWAP C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -10,7 +10,7 @@ include_directories(libft/includes)
 include_directories(libft/srcs)
 include_directories(src)
 
-add_executable(git_push_swap
+add_executable(FINAL_OF_PUSH_SWAP
         includes/ft_push_swap.h
         libft/includes/error.h
         libft/includes/ft_types.h
@@ -84,6 +84,7 @@ add_executable(git_push_swap
         libft/srcs/ft_tolower.c
         libft/srcs/ft_toupper.c
         libft/srcs/get_next_line.c
+        src/extra_functions.c
         src/ft_checker.c
         src/ft_error.c
         src/ft_push_swap.c
@@ -93,5 +94,6 @@ add_executable(git_push_swap
         src/px.c
         src/rrx.c
         src/rx.c
+        src/sort_stacks.c
         src/sorting_algorythm.c
-        src/sx.c src/extra_functions.c)
+        src/sx.c)

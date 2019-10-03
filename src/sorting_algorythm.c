@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_algorythm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 19:12:06 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:44:17 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:14:08 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:14:13 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 #include <stdio.h>
 
-int			mid_sorting(t_stack *stack)
+int				mid_sorting(t_stack *stack)
 {
-	t_elem	*elem;
+	t_elem		*elem;
 
 	elem = stack->head;
 	while (elem != stack->tail)
@@ -28,192 +28,76 @@ int			mid_sorting(t_stack *stack)
 	return (1);
 }
 
-void            min_num_of_operations(t_push_swap *ps)
+void			min_num_of_operations(t_stack *stack, t_push_swap *ps)
 {
-	if (ps->a->size == 3)
+	if (stack->size == 3)
 	{
-		while (mid_sorting(ps->a) != 1)
+		while (mid_sorting(stack) != 1)
 		{
-			if (ps->a->head->num > ps->a->head->next->num &&
-				ps->a->head->num > ps->a->tail->num)
+			if (stack->head->num > stack->head->next->num &&
+				stack->head->num > stack->tail->num)
 			{
 				ft_ra(ps);
-				printf("ra\n");
-				ps->num_operations++;
+				ft_putendl_fd("ra", 1);
 			}
-			if (ps->a->head->num > ps->a->head->next->num)
+			if (stack->head->num > stack->head->next->num)
 			{
 				ft_sa(ps);
-				printf("sa\n");
-				ps->num_operations++;
+				ft_putendl_fd("sa", 1);
 			}
-			if (ps->a->tail->num < ps->a->tail->prev->num)
+			if (stack->tail->num < stack->tail->prev->num)
 			{
 				ft_rra(ps);
-				printf("rra\n");
-				ps->num_operations++;
+				ft_putendl_fd("rra", 1);
 			}
 		}
 	}
 }
 
-int min_del_a(t_push_swap *ps,int min, int del)
+int				min_mid_a(t_push_swap *ps, int min, int curr_mid)
 {
-	t_elem *s;
+	t_elem		*s;
 
 	s = ps->a->head;
-	while(s->next != ps->a->head)
+	while (s->next != ps->a->head)
 	{
-		if (s->num >= min && s->num <= del)
-			return(1);
+		if (s->num >= min && s->num <= curr_mid)
+			return (1);
 		s = s->next;
 	}
-	if (s->num >= min && s->num <= del)
-			return(1);
-	return(0);
+	if (s->num >= min && s->num <= curr_mid)
+		return (1);
+	return (0);
 }
 
-int min_elem_sort(t_push_swap *ps,int min)
+void			small_stack(t_stack *stack, t_push_swap *ps)
 {
-	t_elem *s;
-	int min_elem;
-
-	min_elem = max_elem(ps->a);
-	s = ps->a->head;
-	while(s->next != ps->a->head)
+	if (stack->size == 2)
 	{
-		if (s->num >= min && s->num < min_elem)
-			min_elem = s->num;
-		s = s->next;
-	}
-	if (s->num >= min && s->num < min_elem)
-			min_elem = s->num;
-	return(min_elem);
-}
-
-void        quick_sort_a(t_push_swap *ps)
-{
-	int		max;
-	int		min;
-	int		mid;
-	int		i;
-	int		size;
-
-	max = max_elem(ps->a);
-	min = (ps->sort  == 0) ? min_elem(ps->a) : min_elem_sort(ps,ps->next);
-	mid = (max - min) / 2 + min;
-	mid = (max - mid < 3 || ps->a->size - ps->sort_nub < 3 ) ? max : mid;
-	mid = (mid == ps->mid) ? mid + 2 : mid;
-	if (ps->a->size < 4)
-	{
-		if (ps->a->size == 2)
+		if (mid_sorting(stack) == 0)
 		{
-			if (mid_sorting(ps->a) == 0)
-			{
-				ft_sa(ps);
-				printf("sa\n");
-			}
+			ft_sa(ps);
+			ft_putendl_fd("sa", 1);
 		}
-		else
-			min_num_of_operations(ps);
 	}
 	else
-	{
-		i = 0;
-		size = ps->a->size;
-		while(i <  size && ps->a->head && ps->a->head->num >= min && min_del_a(ps,min,mid) == 1)
-		{
-			while (ps->a->head && ps->a->head->num <= mid && ps->a->head->num >= min)
-			{
-				ft_pb(ps);
-				printf("pb\n");
-				i++;
-			}
-			if (ps->a->head && ps->a->head->num >= min && min_del_a(ps,min,mid) == 1)
-			{
-				ft_ra(ps);
-				printf("ra\n");
-			}
-			i++;
-		}
-	}
-	i=0;
-	while (ps->a && ps->a->tail && ps->a->tail->num >= min && ps->sort == 1 && !ft_is_sorted(ps))
-	{
-		ft_rra(ps);
-		printf("rra\n");
-	}
-	ps->mid = mid;
-	ps->sort = 1;
+		min_num_of_operations(stack, ps);
 }
 
-void        quick_sort_b(t_push_swap *ps)
-{
-	int     max;
-	int     min;
-	int     mid;
-	int     i;
-
-	max = max_elem(ps->b);
-	min = min_elem(ps->b);
-	mid = (max - min) / 2 + min;
-	if (ps->b->size < 4)
-	{
-		if (ps->b->size == 2)
-		{
-			if (mid_sorting(ps->a) == 0)
-			{
-				ft_sb(ps);
-				printf("sb\n");
-			}
-		}
-		else
-			min_num_of_operations(ps);
-	}
-	i = ps->b->size;
-	while(ps->b->head && i-- > 0)
-	{
-		while (ps->b->head && ps->b->head->num > mid)
-		{
-			ft_pa(ps);
-			printf("pa\n");
-			i--;
-		}
-		ft_rb(ps);
-		printf("rb\n");
-	}
-	i = 0;
-	while (ps->b->head != NULL && max_on_the_top_b(ps) !=1)
-	{
-		ps->sort_nub = ps->sort_nub + 1;
-		ft_pa(ps);
-		printf("pa\n");
-		i++;
-	}
-	while (i>0)
-	{
-		ft_ra(ps);
-		printf("ra\n");
-		i--;
-	}
-	ps->next = ps->a->tail->num + 1;
-}
-
-void            prep_sort(t_push_swap *ps)
+void			prep_sort(t_push_swap *ps)
 {
 	if (ps->a->size == 2)
 	{
 		if (mid_sorting(ps->a) == 0)
 		{
 			ft_sa(ps);
-			printf("sa\n");
-			ps->num_operations++;
+			ft_putendl_fd("sa", 1);
 		}
 		return ;
 	}
 	if (ps->a->size == 3)
 	{
-		min_num_of_operations(ps);
+		min_num_of_operations(ps->a, ps);
 		return ;
 	}
 	else

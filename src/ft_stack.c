@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 14:25:46 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:44:21 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:10:48 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:10:49 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_stack					*ft_newstack(void)
 	stack->head = NULL;
 	stack->tail = NULL;
 	stack->size = 0;
-//	printf("size of stzck %zu\n", stack->size);
 	return (stack);
 }
 
@@ -73,7 +72,6 @@ void					ft_addstack(t_elem *elem, t_stack **stack)
 	if (!(*stack))
 		if (!(*stack = ft_newstack()))
 			ft_error();
-		
 	if (!(*stack)->size)
 	{
 		(*stack)->head = elem;

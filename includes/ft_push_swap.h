@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 16:10:51 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:45:35 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:14:39 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:14:40 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,6 @@
 
 # include "../libft/includes/libft.h"
 # include <stdio.h>
-
-# define WHILE while (ps->a->head->num == mid->num || ps->a->head->num == min->num \
-			|| ps->a->head->num == max->num)
-
-/*
-**	------------------------------------------------------------------------  **
-**		INCLUDES     -------------------------------------------------------  **
-**	------------------------------------------------------------------------  **
-*/
-
-/*
-**	------------------------------------------------------------------------  **
-**		TYPES        -------------------------------------------------------  **
-**	------------------------------------------------------------------------  **
-*/
 
 typedef struct			s_elem
 {
@@ -50,36 +35,11 @@ typedef struct			s_push_swap
 	struct s_stack		*a;
 	struct s_stack		*b;
 	unsigned char		is_sorted;
-	size_t				num_operations;
 	int                 next;
 	int                 mid;
-	int                 sort;
+	int                 once_sorted;
 	int					sort_nub;
 }						t_push_swap;
-
-/*
-**	------------------------------------------------------------------------  **
-**		FUNCTIONS    -------------------------------------------------------  **
-**	------------------------------------------------------------------------  **
-*/
-
-/*
-**	----------------------------------------------------  **
-**		MISC         -----------------------------------  **
-**	----------------------------------------------------  **
-*/
-
-/*
-**	Prints "Error\n" on STDOUT and exits with EXIT_FAILURE exitcode 
-*/
-
-void					ft_error(void);
-
-/*
-**	----------------------------------------------------  **
-**		VALIDATION   -----------------------------------  **
-**	----------------------------------------------------  **
-*/
 
 /*
 **	Returns 1 if all args are int and there are no duplicates in input;
@@ -87,12 +47,6 @@ void					ft_error(void);
 */
 
 unsigned char			ft_input_validation(int ac, char **av);
-
-/*
-**	----------------------------------------------------  **
-**		STACKS       -----------------------------------  **
-**	----------------------------------------------------  **
-*/
 
 /*
 **	Creates new element with desired (num),
@@ -133,12 +87,9 @@ void					ft_cleanstack(t_stack **stack);
 */
 
 void					ft_addstack(t_elem *elem, t_stack **stack);
+
+
 void				ft_print_stack(t_stack *stack);
-/*
-**	----------------------------------------------------  **
-**		RULES        -----------------------------------  **
-**	----------------------------------------------------  **
-*/
 
 /*
 **	swap a - swap the first 2 elements at the top of stack a;
@@ -241,16 +192,9 @@ int						mid_sorting(t_stack *stack);
 /*
 **	divides initial stack into two different ones before application of sorting algorythm
 */
-void				preparations(t_push_swap *ps);
+int				min_mid_a(t_push_swap *ps, int min, int curr_mid);
 
-void					sorting(t_push_swap *ps, t_elem *max, t_elem *min);
-
-void	create_second_stack(t_push_swap *ps, t_elem *max, t_elem *min, t_elem *mid);
-
-void		final_sorting(t_push_swap *ps, t_elem *max, t_elem *min);
-
-void		next_step(t_push_swap *ps);
-void            min_num_of_operations(t_push_swap *ps);
+void            min_num_of_operations(t_stack *stack, t_push_swap *ps);
 void        quick_sort_a(t_push_swap *ps);
 int			max_on_the_top_b(t_push_swap *ps);
 int			max_elem(t_stack *stack);
@@ -261,5 +205,20 @@ void        quick_sort_b(t_push_swap *ps);
 **	rotates stack b in the fastest way
 */
 void		rotate_b(int st, int fh, t_push_swap *ps, int max);
+void		reading_commands(t_push_swap *ps);
+
+/*
+**
+*/
+int			min_elem_sort(t_push_swap *ps,int min);
+
+int				min_del_a(t_push_swap *ps, int min, int del);
+
+void			small_stack(t_stack *stack, t_push_swap *ps);
+
+void			from_a_to_b(t_push_swap *ps, int min, int mid);
+
+void			from_b_to_a(t_push_swap *ps);
+
 
 #endif

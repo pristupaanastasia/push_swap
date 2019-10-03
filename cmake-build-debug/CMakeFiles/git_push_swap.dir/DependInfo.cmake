@@ -81,6 +81,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/px.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/px.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rrx.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/rrx.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rx.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/rx.c.o"
+  "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sort_stacks.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/sort_stacks.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sorting_algorythm.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/sorting_algorythm.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sx.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/git_push_swap.dir/src/sx.c.o"
   )

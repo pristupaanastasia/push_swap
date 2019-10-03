@@ -78,6 +78,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/git_push_swap.dir/src/sorting_algorythm.c.o"
   "CMakeFiles/git_push_swap.dir/src/sx.c.o"
   "CMakeFiles/git_push_swap.dir/src/extra_functions.c.o"
+  "CMakeFiles/git_push_swap.dir/src/sort_stacks.c.o"
   "git_push_swap.pdb"
   "git_push_swap"
 )

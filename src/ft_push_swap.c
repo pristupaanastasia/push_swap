@@ -3,43 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:53:51 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:49:12 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:10:23 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:10:25 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-
-void				ft_print_stack(t_stack *stack)
-{
-	t_elem				*elem;
-
-	if (!stack || !stack->head || !(elem = stack->head))
-	{
-		printf("\tNULL\n");
-		return ;
-	}
-	if (stack->size == 1)
-	{
-		printf("HEAD & TAIL  [%3d <- {%3d} -> %3d]\n",
-				  elem->prev->num, elem->num, elem->next->num);
-		return ;
-	}
-	while (elem != stack->tail)
-	{
-		if (elem == stack->head)
-			printf("\tHEAD");
-		else
-			printf("\t    ");
-		printf(" [%3d <- {%3d} -> %3d]\n",
-				  elem->prev->num, elem->num, elem->next->num);
-		elem = elem->next;
-	}
-	printf("\tTAIL [%3d <- {%3d} -> %3d]\n",
-			  elem->prev->num, elem->num, elem->next->num);
-}
 
 static t_stack			*ft_init_stack_a(int ac, char **av)
 {
@@ -65,7 +36,7 @@ int						main(int ac, char **av)
 {
 	t_push_swap			ps;
 	char				**input;
-	int 				i;
+	int					i;
 	int					j;
 
 	if (ac == 1)
@@ -73,7 +44,6 @@ int						main(int ac, char **av)
 	else if (ac == 2)
 	{
 		i = 0;
-
 		input = ft_strsplit(av[1], ' ');
 		while (input[i])
 			i++;
@@ -82,16 +52,16 @@ int						main(int ac, char **av)
 		i++;
 		av = (char**)malloc(sizeof(char*) * i);
 		j = 1;
-		while (j < i)
-		{
+		while (j++ < i)
 			av[j] = input[j - 1];
-			j++;
-		}
 		ac = i;
 	}
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack_a(ac, av);
-	ps.sort_nub = 0;
-	if (!ps.is_sorted)
+	if (ps.is_sorted == 0)
+	{
 		prep_sort(&ps);
+		//printf("y\n");
+	}
+
 }

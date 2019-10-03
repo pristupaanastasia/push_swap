@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 14:26:06 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:44:25 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:11:08 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:11:10 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void					ft_error(void)
 {
 	ft_putendl_fd("Error", 2);
-	exit(EXIT_FAILURE);
+	exit(1);
 }

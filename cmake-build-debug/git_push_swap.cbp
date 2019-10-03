@@ -341,6 +341,9 @@
 		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rx.c">
 			<Option target="git_push_swap"/>
 		</Unit>
+		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sort_stacks.c">
+			<Option target="git_push_swap"/>
+		</Unit>
 		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sorting_algorythm.c">
 			<Option target="git_push_swap"/>
 		</Unit>

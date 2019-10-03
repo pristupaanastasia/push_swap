@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   extra_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/02 13:44:32 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:44:30 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:13:14 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:13:16 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
+
+int			min_elem_sort(t_push_swap *ps, int min)
+{
+	t_elem		*tmp;
+	int			min_elem;
+
+	min_elem = max_elem(ps->a);
+	tmp = ps->a->head;
+	while (tmp->next != ps->a->head)
+	{
+		if (tmp->num >= min && tmp->num < min_elem)
+			min_elem = tmp->num;
+		tmp = tmp->next;
+	}
+	if (tmp->num >= min && tmp->num < min_elem)
+		min_elem = tmp->num;
+	return (min_elem);
+}
 
 int			max_elem(t_stack *stack)
 {

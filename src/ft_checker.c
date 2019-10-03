@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 14:26:24 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:51:25 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:09:56 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:09:57 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,47 +60,54 @@ void		ft_make_command(t_push_swap *ps, char *line)
 		ft_error();
 }
 
-int			main(int ac, char **av)
+void		reading_commands(t_push_swap *ps)
 {
-	t_push_swap			ps;
-	char				*line;
-	char				**input;
-	int					ret;
-	int 				i;
-	int					j;
+	int			ret;
+	char		*line;
 
-	if (ac == 1)
+	ret = 1;
+	while (ret == 1)
 	{
-		ft_error();
-		return (0);
-	}
-	else if (ac == 2)
-	{
-		i = 0;
-		input = ft_strsplit(av[1], ' ');
-		while (input[i])
-			i++;
-		if (i == 0)
-			return (0);
-		i++;
-		av = (char**)malloc(sizeof(char*) * i);
-		j = 1;
-		while (j < i)
+		ret = get_next_line(0, &line);
+		if (ret == 1)
 		{
-			av[j] = input[j - 1];
-			j++;
+			ft_make_command(ps, line);
+			ft_strdel(&line);
 		}
-		ac = i;
-	}
-	ft_bzero(&ps, sizeof(t_push_swap));
-	ps.a = ft_init_stack_a(ac, av);
-	while ((ret = get_next_line(0, &line)))
-	{
+		if (ret == 0)
+			exit(1);
 		if (ret == -1)
 			ft_error();
-		ft_make_command(&ps, line);
 	}
-	ps.is_sorted = ft_is_sorted(&ps);
-	(ps.is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
-	return (0);
+	ps->is_sorted = ft_is_sorted(ps);
+	(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
 }
+
+//int			main(int ac, char **av)
+//{
+//	t_push_swap			ps;
+//	char				**input;
+//	int					i;
+//	int					j;
+//
+//	if (ac == 1)
+//		return (0);
+//	else if (ac == 2)
+//	{
+//		i = 0;
+//		input = ft_strsplit(av[1], ' ');
+//		while (input[i])
+//			i++;
+//		if (i == 0)
+//			return (0);
+//		i++;
+//		av = (char**)malloc(sizeof(char*) * i);
+//		j = 0;
+//		while (j++ < i)
+//			av[j] = input[j - 1];
+//		ac = i;
+//	}
+//	ft_bzero(&ps, sizeof(t_push_swap));
+//	ps.a = ft_init_stack_a(ac, av);
+//	reading_commands(&ps);
+//}

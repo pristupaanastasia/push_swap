@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 14:26:48 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/02 21:44:19 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/03 18:09:32 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/03 18:09:34 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 static unsigned char	ft_all_int(int ac, char **av)
 {
 	int					pos;
+	char				*tmp;
 
 	pos = 1;
 	while (pos < ac)
 	{
-		if (!ft_strequ(av[pos], ft_itoa(ft_atoi(av[pos]))))
+		tmp = ft_itoa(ft_atoi(av[pos]));
+		if (!ft_strequ(av[pos], tmp))
+		{
+			ft_strdel(&tmp);
 			return (0);
+		}
+		ft_strdel(&tmp);
 		pos++;
 	}
 	return (1);
