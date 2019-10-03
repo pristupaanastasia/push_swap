@@ -2148,6 +2148,33 @@ src/px.c.s:
 	$(MAKE) -f CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/px.c.s
 .PHONY : src/px.c.s
 
+src/rotations.o: src/rotations.c.o
+
+.PHONY : src/rotations.o
+
+# target to build an object file
+src/rotations.c.o:
+	$(MAKE) -f CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o
+.PHONY : src/rotations.c.o
+
+src/rotations.i: src/rotations.c.i
+
+.PHONY : src/rotations.i
+
+# target to preprocess a source file
+src/rotations.c.i:
+	$(MAKE) -f CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.i
+.PHONY : src/rotations.c.i
+
+src/rotations.s: src/rotations.c.s
+
+.PHONY : src/rotations.s
+
+# target to generate assembly for a file
+src/rotations.c.s:
+	$(MAKE) -f CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.s
+.PHONY : src/rotations.c.s
+
 src/rrx.o: src/rrx.c.o
 
 .PHONY : src/rrx.o
@@ -2517,6 +2544,9 @@ help:
 	@echo "... src/px.o"
 	@echo "... src/px.i"
 	@echo "... src/px.s"
+	@echo "... src/rotations.o"
+	@echo "... src/rotations.i"
+	@echo "... src/rotations.s"
 	@echo "... src/rrx.o"
 	@echo "... src/rrx.i"
 	@echo "... src/rrx.s"

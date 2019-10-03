@@ -16,8 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	char	*fresh;
 
-	fresh = malloc(size);
-	if (fresh == NULL)
+	if (!(fresh = malloc(size)))
 		return (NULL);
 	else
 		ft_bzero(fresh, size);

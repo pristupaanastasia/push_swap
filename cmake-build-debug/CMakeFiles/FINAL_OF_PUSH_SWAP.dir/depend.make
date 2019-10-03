@@ -235,6 +235,10 @@ CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/px.c.o: ../includes/ft_push_swap.h
 CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/px.c.o: ../libft/includes/libft.h
 CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/px.c.o: ../src/px.c
 
+CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o: ../includes/ft_push_swap.h
+CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o: ../libft/includes/libft.h
+CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o: ../src/rotations.c
+
 CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rrx.c.o: ../includes/ft_push_swap.h
 CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rrx.c.o: ../libft/includes/libft.h
 CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rrx.c.o: ../src/rrx.c

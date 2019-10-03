@@ -335,6 +335,9 @@
 		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/px.c">
 			<Option target="FINAL_OF_PUSH_SWAP"/>
 		</Unit>
+		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rotations.c">
+			<Option target="FINAL_OF_PUSH_SWAP"/>
+		</Unit>
 		<Unit filename="/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rrx.c">
 			<Option target="FINAL_OF_PUSH_SWAP"/>
 		</Unit>

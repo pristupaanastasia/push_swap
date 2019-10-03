@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-#include <stdio.h>
 
 int				mid_sorting(t_stack *stack)
 {
@@ -28,28 +27,16 @@ int				mid_sorting(t_stack *stack)
 	return (1);
 }
 
-void			min_num_of_operations(t_stack *stack, t_push_swap *ps)
+void			min_num_of_operations(t_stack *stack, t_push_swap *ps, char ch)
 {
 	if (stack->size == 3)
 	{
 		while (mid_sorting(stack) != 1)
 		{
-			if (stack->head->num > stack->head->next->num &&
-				stack->head->num > stack->tail->num)
-			{
-				ft_ra(ps);
-				ft_putendl_fd("ra", 1);
-			}
-			if (stack->head->num > stack->head->next->num)
-			{
-				ft_sa(ps);
-				ft_putendl_fd("sa", 1);
-			}
-			if (stack->tail->num < stack->tail->prev->num)
-			{
-				ft_rra(ps);
-				ft_putendl_fd("rra", 1);
-			}
+			if (ch == 'a')
+				three_rotation_for_a(stack, ps);
+			else if (ch == 'b')
+				three_rotation_for_b(stack, ps);
 		}
 	}
 }
@@ -70,20 +57,6 @@ int				min_mid_a(t_push_swap *ps, int min, int curr_mid)
 	return (0);
 }
 
-void			small_stack(t_stack *stack, t_push_swap *ps)
-{
-	if (stack->size == 2)
-	{
-		if (mid_sorting(stack) == 0)
-		{
-			ft_sa(ps);
-			ft_putendl_fd("sa", 1);
-		}
-	}
-	else
-		min_num_of_operations(stack, ps);
-}
-
 void			prep_sort(t_push_swap *ps)
 {
 	if (ps->a->size == 2)
@@ -97,7 +70,7 @@ void			prep_sort(t_push_swap *ps)
 	}
 	if (ps->a->size == 3)
 	{
-		min_num_of_operations(ps->a, ps);
+		min_num_of_operations(ps->a, ps, 'a');
 		return ;
 	}
 	else

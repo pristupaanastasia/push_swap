@@ -79,6 +79,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sort_stacks.c.o"
   "CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sorting_algorythm.c.o"
   "CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sx.c.o"
+  "CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o"
   "FINAL_OF_PUSH_SWAP.pdb"
   "FINAL_OF_PUSH_SWAP"
 )

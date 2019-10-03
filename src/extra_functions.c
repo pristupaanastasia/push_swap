@@ -12,22 +12,22 @@
 
 #include "../includes/ft_push_swap.h"
 
-int			min_elem_sort(t_push_swap *ps, int min)
+int			min_elem_sort(t_push_swap *ps, int curr_min)
 {
 	t_elem		*tmp;
-	int			min_elem;
+	int			new_min;
 
-	min_elem = max_elem(ps->a);
+	new_min = max_elem(ps->a);
 	tmp = ps->a->head;
 	while (tmp->next != ps->a->head)
 	{
-		if (tmp->num >= min && tmp->num < min_elem)
-			min_elem = tmp->num;
+		if (tmp->num >= curr_min && tmp->num < new_min)
+			new_min = tmp->num;
 		tmp = tmp->next;
 	}
-	if (tmp->num >= min && tmp->num < min_elem)
-		min_elem = tmp->num;
-	return (min_elem);
+	if (tmp->num >= curr_min && tmp->num < new_min)
+		new_min = tmp->num;
+	return (new_min);
 }
 
 int			max_elem(t_stack *stack)

@@ -5,7 +5,7 @@ FLAGS = -Wall -Wextra -Werror
 SRC_PUSH_SWAP = ./src/ft_error.c ./src/ft_stack.c ./src/ft_validation.c \
 				./src/px.c ./src/rrx.c ./src/sx.c ./src/is_sorted.c \
 			    ./src/sort_stacks.c ./src/sorting_algorythm.c ./src/ft_push_swap.c ./src/rx.c \
-								        ./src/extra_functions.c
+				./src/rotations.c ./src/extra_functions.c
 
 
 HEADER = ./includes/ft_push_swap.h

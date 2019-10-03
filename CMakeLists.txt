@@ -96,4 +96,4 @@ add_executable(FINAL_OF_PUSH_SWAP
         src/rx.c
         src/sort_stacks.c
         src/sorting_algorythm.c
-        src/sx.c)
+        src/sx.c src/rotations.c)

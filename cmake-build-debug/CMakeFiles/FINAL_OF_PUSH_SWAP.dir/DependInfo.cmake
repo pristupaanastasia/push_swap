@@ -79,6 +79,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/ft_validation.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/ft_validation.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/is_sorted.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/is_sorted.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/px.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/px.c.o"
+  "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rotations.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rotations.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rrx.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rrx.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/rx.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/rx.c.o"
   "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/src/sort_stacks.c" "/Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sort_stacks.c.o"

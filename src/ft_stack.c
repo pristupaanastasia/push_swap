@@ -51,18 +51,23 @@ void					ft_cleanstack(t_stack **stack)
 {
 	t_elem				*cur;
 	t_elem				*next;
+	int					i;
 
-	cur = (*stack)->head;
-	next = cur->next;
-	while (cur)
+	if ((*stack)->head)
 	{
-		ft_cleanelem(&cur);
-		cur = next;
+		cur = (*stack)->head;
 		next = cur->next;
+		i = (*stack)->size;
+		while (i-- > 0)
+		{
+			ft_cleanelem(&cur);
+			cur = next;
+			next = cur->next;
+		}
+		(*stack)->size = 0;
+		free(*stack);
+		*stack = NULL;
 	}
-	(*stack)->size = 0;
-	free(*stack);
-	*stack = NULL;
 }
 
 void					ft_addstack(t_elem *elem, t_stack **stack)

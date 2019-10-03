@@ -52,7 +52,7 @@ void			quick_sort_a(t_push_swap *ps)
 	mid = (max - mid < 3 || ps->a->size - ps->sort_nub < 3) ? max : mid;
 	mid = (mid == ps->mid) ? mid + 2 : mid;
 	if (ps->a->size < 4)
-		small_stack(ps->a, ps);
+		small_stack(ps->a, ps, 'a');
 	else
 		from_a_to_b(ps, min, mid);
 	while (ps->a && ps->a->tail && ps->a->tail->num >= min &&
@@ -94,8 +94,6 @@ void			quick_sort_b(t_push_swap *ps)
 	max = max_elem(ps->b);
 	min = min_elem(ps->b);
 	mid = (max - min) / 2 + min;
-	if (ps->b->size < 4)
-		small_stack(ps->b, ps);
 	i = ps->b->size;
 	while (ps->b->head && i-- > 0)
 	{
@@ -105,8 +103,11 @@ void			quick_sort_b(t_push_swap *ps)
 			ft_putendl_fd("pa", 1);
 			i--;
 		}
-		ft_rb(ps);
-		ft_putendl_fd("rb", 1);
+		if (ps->b->size > 1)
+		{
+			ft_rb(ps);
+			ft_putendl_fd("rb", 1);
+		}
 	}
 	from_b_to_a(ps);
 	ps->next = ps->a->tail->num + 1;

@@ -190,21 +190,33 @@ void					prep_sort(t_push_swap *ps);
 int						mid_sorting(t_stack *stack);
 
 /*
-**	divides initial stack into two different ones before application of sorting algorythm
+**	shows whether nums >= current min num and <= current medium num are in stack which
+** we are working with
 */
+
 int				min_mid_a(t_push_swap *ps, int min, int curr_mid);
 
-void            min_num_of_operations(t_stack *stack, t_push_swap *ps);
+void            min_num_of_operations(t_stack *stack, t_push_swap *ps, char ch);
 void        quick_sort_a(t_push_swap *ps);
+
+/*
+**	calculates how many steps you should do to reach max element in stack then function rotate_b makes
+**	needed number of steps and returns whether stack b is empty or not
+*/
 int			max_on_the_top_b(t_push_swap *ps);
-int			max_elem(t_stack *stack);
-int			min_elem(t_stack *stack);
-void        quick_sort_b(t_push_swap *ps);
 
 /*
 **	rotates stack b in the fastest way
 */
 void		rotate_b(int st, int fh, t_push_swap *ps, int max);
+
+
+
+int			max_elem(t_stack *stack);
+int			min_elem(t_stack *stack);
+void        quick_sort_b(t_push_swap *ps);
+
+
 void		reading_commands(t_push_swap *ps);
 
 /*
@@ -214,11 +226,15 @@ int			min_elem_sort(t_push_swap *ps,int min);
 
 int				min_del_a(t_push_swap *ps, int min, int del);
 
-void			small_stack(t_stack *stack, t_push_swap *ps);
+void			small_stack(t_stack *stack, t_push_swap *ps, char ch);
 
 void			from_a_to_b(t_push_swap *ps, int min, int mid);
 
 void			from_b_to_a(t_push_swap *ps);
+
+void			three_rotation_for_a(t_stack *stack, t_push_swap *ps);
+
+void			three_rotation_for_b(t_stack *stack, t_push_swap *ps);
 
 
 #endif

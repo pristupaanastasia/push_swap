@@ -83,31 +83,31 @@ void		reading_commands(t_push_swap *ps)
 	(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
 }
 
-//int			main(int ac, char **av)
-//{
-//	t_push_swap			ps;
-//	char				**input;
-//	int					i;
-//	int					j;
-//
-//	if (ac == 1)
-//		return (0);
-//	else if (ac == 2)
-//	{
-//		i = 0;
-//		input = ft_strsplit(av[1], ' ');
-//		while (input[i])
-//			i++;
-//		if (i == 0)
-//			return (0);
-//		i++;
-//		av = (char**)malloc(sizeof(char*) * i);
-//		j = 0;
-//		while (j++ < i)
-//			av[j] = input[j - 1];
-//		ac = i;
-//	}
-//	ft_bzero(&ps, sizeof(t_push_swap));
-//	ps.a = ft_init_stack_a(ac, av);
-//	reading_commands(&ps);
-//}
+int			main(int ac, char **av)
+{
+	t_push_swap			ps;
+	char				**input;
+	int					i;
+	int					j;
+
+	if (ac == 1)
+		return (0);
+	else if (ac == 2)
+	{
+		i = 0;
+		input = ft_strsplit(av[1], ' ');
+		while (input[i])
+			i++;
+		if (i == 0)
+			return (0);
+		i++;
+		av = (char**)malloc(sizeof(char*) * i);
+		j = 0;
+		while (j++ < i)
+			av[j] = input[j - 1];
+		ac = i;
+	}
+	ft_bzero(&ps, sizeof(t_push_swap));
+	ps.a = ft_init_stack_a(ac, av);
+	reading_commands(&ps);
+}

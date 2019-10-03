@@ -58,10 +58,7 @@ int						main(int ac, char **av)
 	}
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack_a(ac, av);
-	if (ps.is_sorted == 0)
-	{
-		prep_sort(&ps);
-		//printf("y\n");
-	}
-
+	ps.is_sorted == 0 ? prep_sort(&ps) : 1;
+	ps.a != NULL ? ft_cleanstack(&ps.a) : 1;
+	ps.b != NULL ? ft_cleanstack(&ps.b) : 1;
 }
