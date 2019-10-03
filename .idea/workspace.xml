@@ -12,41 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e077acc-c0c8-4dfa-871b-28b13b6790ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/author" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rotations.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/libft/srcs/ft_memalloc.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/libft/srcs/ft_memalloc.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/extra_functions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/extra_functions.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/ft_push_swap.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/ft_push_swap.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/ft_stack.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/ft_stack.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sort_stacks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sort_stacks.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sorting_algorythm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FINAL_OF_PUSH_SWAP.dir/src/sorting_algorythm.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FINAL_OF_PUSH_SWAP" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FINAL_OF_PUSH_SWAP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FINAL_OF_PUSH_SWAP.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FINAL_OF_PUSH_SWAP.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/ft_push_swap.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_push_swap.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/srcs/ft_memalloc.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/srcs/ft_memalloc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/push_swap.dSYM/Contents/Resources/DWARF/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap.dSYM/Contents/Resources/DWARF/push_swap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extra_functions.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/extra_functions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ft_checker.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/ft_checker.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/push_swap" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ft_push_swap.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/ft_push_swap.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ft_stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/ft_stack.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sort_stacks.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sort_stacks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sorting_algorythm.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting_algorythm.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,8 +52,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ft_checker.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+                <state relative-caret-position="648">
+                  <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -120,8 +88,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ft_push_swap.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="479">
-                  <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+                <state relative-caret-position="194">
+                  <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -297,16 +265,15 @@
       <workItem from="1570108567577" duration="1178000" />
       <workItem from="1570110402948" duration="8362000" />
       <workItem from="1570120480347" duration="15000" />
-      <workItem from="1570120513120" duration="9499000" />
+      <workItem from="1570120513120" duration="9783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24550000" />
+    <option name="totallyTimeSpent" value="24834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.111199364" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -547,15 +514,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ft_checker.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+        <state relative-caret-position="648">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ft_push_swap.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+        <state relative-caret-position="194">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
         </state>
       </provider>
     </entry>
