@@ -98,4 +98,5 @@ int						main(int ac, char **av)
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack(ac, av);
 	start_of_sorting(&ps);
+	exit (1);
 }

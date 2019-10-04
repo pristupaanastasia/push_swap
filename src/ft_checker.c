@@ -92,14 +92,12 @@ void		ft_make_command(t_push_swap *ps, char *line)
 		ft_error();
 }
 
-void		reading_commands(t_push_swap *ps, int ac, char **av)
+void		reading_commands(t_push_swap *ps)
 {
 	int			ret;
 	char		*line;
 
 	ret = 1;
-	ft_bzero(&ps, sizeof(t_push_swap));
-	ps->a = ft_init_stack(ac, av);
 	while (ret == 1)
 	{
 		ret = get_next_line(0, &line);
@@ -118,7 +116,7 @@ void		reading_commands(t_push_swap *ps, int ac, char **av)
 	}
 }
 
-/*int			main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_push_swap			ps;
 	char				**input;
@@ -143,6 +141,7 @@ void		reading_commands(t_push_swap *ps, int ac, char **av)
 		ac = i;
 		ft_clean_input(j, input);
 	}
-	reading_commands(&ps, ac, av);
+	ft_bzero(&ps, sizeof(t_push_swap));
+	ps.a = ft_init_stack(ac, av);
+	reading_commands(&ps);
 }
-*/

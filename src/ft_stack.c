@@ -57,9 +57,8 @@ void					ft_cleanstack(t_stack **stack)
 		cur = (*stack)->head;
 		next = cur->next;
 		i = (*stack)->size;
-		while (i-- > 1 && cur && next)
+		while (i-- > 0)
 		{
-			//ft_cleanelem(&cur);
 			free(cur);
 			cur = next;
 			if (cur->next)

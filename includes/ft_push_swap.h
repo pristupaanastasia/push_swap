@@ -242,7 +242,7 @@ int						min_elem(t_stack *stack);
 **	reads commands which of each command of algorithm
 */
 
-void					reading_commands(t_push_swap *ps, int ac, char **av);
+void					reading_commands(t_push_swap *ps);
 
 /*
 **	finds next min elem in stack a
