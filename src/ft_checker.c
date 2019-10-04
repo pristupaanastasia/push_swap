@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:09:56 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/03 18:09:57 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/04 16:59:34 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,30 +118,31 @@ void		reading_commands(t_push_swap *ps, int ac, char **av)
 	}
 }
 
-//int			main(int ac, char **av)
-//{
-//	t_push_swap			ps;
-//	char				**input;
-//	int					i;
-//	int					j;
-//
-//	if (ac == 1)
-//		return (0);
-//	else if (ac == 2)
-//	{
-//		i = 0;
-//		input = ft_strsplit(av[1], ' ');
-//		while (input[i])
-//			i++;
-//		if (i == 0)
-//			return (0);
-//		i++;
-//		av = (char**)malloc(sizeof(char*) * i);
-//		j = 0;
-//		while (j++ < i - 1)
-//			av[j] = ft_strdup(input[j - 1]);
-//		ac = i;
-//		ft_clean_input(j, input);
-//	}
-//	reading_commands(&ps, ac, av);
-//}
+/*int			main(int ac, char **av)
+{
+	t_push_swap			ps;
+	char				**input;
+	int					i;
+	int					j;
+
+	if (ac == 1)
+		return (0);
+	else if (ac == 2)
+	{
+		i = 0;
+		input = ft_strsplit(av[1], ' ');
+		while (input[i])
+			i++;
+		if (i == 0)
+			return (0);
+		i++;
+		av = (char**)malloc(sizeof(char*) * i);
+		j = 0;
+		while (j++ < i - 1)
+			av[j] = ft_strdup(input[j - 1]);
+		ac = i;
+		ft_clean_input(j, input);
+	}
+	reading_commands(&ps, ac, av);
+}
+*/

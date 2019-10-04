@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:10:48 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/03 18:10:49 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/04 17:11:04 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void					ft_cleanelem(t_elem **elem)
 	(*elem)->next = NULL;
 	(*elem)->prev = NULL;
 	free(*elem);
-	*elem = NULL;
 }
 
 void					ft_cleanstack(t_stack **stack)
@@ -58,11 +57,15 @@ void					ft_cleanstack(t_stack **stack)
 		cur = (*stack)->head;
 		next = cur->next;
 		i = (*stack)->size;
-		while (i-- > 0)
+		while (i-- > 1 && cur && next)
 		{
-			ft_cleanelem(&cur);
+			//ft_cleanelem(&cur);
+			free(cur);
 			cur = next;
-			next = cur->next;
+			if (cur->next)
+				next = cur->next;
+			else
+				next = NULL;
 		}
 		(*stack)->size = 0;
 		free(*stack);
