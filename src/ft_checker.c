@@ -12,7 +12,36 @@
 
 #include "../includes/ft_push_swap.h"
 
-t_stack		*ft_init_stack_a(int ac, char **av)
+static void				ft_clean_av(int ac, char **av)
+{
+	int		i;
+
+	i = 1;
+	if (av)
+	{
+		while (i < ac && av[i])
+		{
+			ft_strdel(&av[i]);
+			i++;
+		}
+		free(av);
+	}
+}
+
+static void				ft_clean_input(int n, char **input)
+{
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		ft_strdel(&input[i]);
+		i++;
+	}
+	free(input);
+}
+
+static t_stack		*ft_init_stack(int ac, char **av)
 {
 	t_elem				*elem;
 	t_stack				*stack;
@@ -29,8 +58,11 @@ t_stack		*ft_init_stack_a(int ac, char **av)
 		ft_addstack(elem, &stack);
 		arg_pos++;
 	}
+	if (ac == 2)
+		ft_clean_av(ac, av);
 	return (stack);
 }
+
 
 void		ft_make_command(t_push_swap *ps, char *line)
 {
@@ -60,12 +92,14 @@ void		ft_make_command(t_push_swap *ps, char *line)
 		ft_error();
 }
 
-void		reading_commands(t_push_swap *ps)
+void		reading_commands(t_push_swap *ps, int ac, char **av)
 {
 	int			ret;
 	char		*line;
 
 	ret = 1;
+	ft_bzero(&ps, sizeof(t_push_swap));
+	ps->a = ft_init_stack(ac, av);
 	while (ret == 1)
 	{
 		ret = get_next_line(0, &line);
@@ -75,39 +109,39 @@ void		reading_commands(t_push_swap *ps)
 			ft_strdel(&line);
 		}
 		if (ret == 0)
-			exit(1);
+		{
+			ps->is_sorted = ft_is_sorted(ps);
+			(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
+		}
 		if (ret == -1)
 			ft_error();
 	}
-	ps->is_sorted = ft_is_sorted(ps);
-	(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
 }
 
-int			main(int ac, char **av)
-{
-	t_push_swap			ps;
-	char				**input;
-	int					i;
-	int					j;
-
-	if (ac == 1)
-		return (0);
-	else if (ac == 2)
-	{
-		i = 0;
-		input = ft_strsplit(av[1], ' ');
-		while (input[i])
-			i++;
-		if (i == 0)
-			return (0);
-		i++;
-		av = (char**)malloc(sizeof(char*) * i);
-		j = 0;
-		while (j++ < i)
-			av[j] = input[j - 1];
-		ac = i;
-	}
-	ft_bzero(&ps, sizeof(t_push_swap));
-	ps.a = ft_init_stack_a(ac, av);
-	reading_commands(&ps);
-}
+//int			main(int ac, char **av)
+//{
+//	t_push_swap			ps;
+//	char				**input;
+//	int					i;
+//	int					j;
+//
+//	if (ac == 1)
+//		return (0);
+//	else if (ac == 2)
+//	{
+//		i = 0;
+//		input = ft_strsplit(av[1], ' ');
+//		while (input[i])
+//			i++;
+//		if (i == 0)
+//			return (0);
+//		i++;
+//		av = (char**)malloc(sizeof(char*) * i);
+//		j = 0;
+//		while (j++ < i - 1)
+//			av[j] = ft_strdup(input[j - 1]);
+//		ac = i;
+//		ft_clean_input(j, input);
+//	}
+//	reading_commands(&ps, ac, av);
+//}

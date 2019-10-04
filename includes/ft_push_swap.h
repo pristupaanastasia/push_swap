@@ -35,9 +35,9 @@ typedef struct			s_push_swap
 	struct s_stack		*a;
 	struct s_stack		*b;
 	unsigned char		is_sorted;
-	int                 next;
-	int                 mid;
-	int                 once_sorted;
+	int					next_min;
+	int					current_mid;
+	int					once_sorted;
 	int					sort_nub;
 }						t_push_swap;
 
@@ -87,9 +87,6 @@ void					ft_cleanstack(t_stack **stack);
 */
 
 void					ft_addstack(t_elem *elem, t_stack **stack);
-
-
-void				ft_print_stack(t_stack *stack);
 
 /*
 **	swap a - swap the first 2 elements at the top of stack a;
@@ -190,51 +187,99 @@ void					prep_sort(t_push_swap *ps);
 int						mid_sorting(t_stack *stack);
 
 /*
-**	shows whether nums >= current min num and <= current medium num are in stack which
-** we are working with
+**	shows whether nums >= current min num and <= current medium num
+**	are in stack which we are working with
 */
 
-int				min_mid_a(t_push_swap *ps, int min, int curr_mid);
-
-void            min_num_of_operations(t_stack *stack, t_push_swap *ps, char ch);
-void        quick_sort_a(t_push_swap *ps);
+int						min_mid_a(t_push_swap *ps, int min, int curr_mid);
 
 /*
-**	calculates how many steps you should do to reach max element in stack then function rotate_b makes
-**	needed number of steps and returns whether stack b is empty or not
+**	sorts stack if its size == 3
 */
-int			max_on_the_top_b(t_push_swap *ps);
+
+void					min_num_of_operations(t_stack *stack,
+		t_push_swap *ps, char ch);
+
+/*
+**	qsort algorithm for stack a
+*/
+
+void					quick_sort_a(t_push_swap *ps);
+
+/*
+**	qsort algorithm for stack a
+*/
+
+void					quick_sort_b(t_push_swap *ps);
+
+/*
+**	calculates how many steps you should do to reach max element in stack
+**	then function rotate_b makes head of the stack max and returns whether
+**	stack b is empty or not
+*/
+
+int						max_on_the_top_b(t_push_swap *ps);
 
 /*
 **	rotates stack b in the fastest way
 */
-void		rotate_b(int st, int fh, t_push_swap *ps, int max);
 
-
-
-int			max_elem(t_stack *stack);
-int			min_elem(t_stack *stack);
-void        quick_sort_b(t_push_swap *ps);
-
-
-void		reading_commands(t_push_swap *ps);
+void					rotate_b(int st, int fh, t_push_swap *ps, int max);
 
 /*
-**
+**	finds max element in stack
 */
-int			min_elem_sort(t_push_swap *ps,int min);
 
-int				min_del_a(t_push_swap *ps, int min, int del);
+int						max_elem(t_stack *stack);
 
-void			small_stack(t_stack *stack, t_push_swap *ps, char ch);
+/*
+**	finds min element in stack
+*/
 
-void			from_a_to_b(t_push_swap *ps, int min, int mid);
+int						min_elem(t_stack *stack);
 
-void			from_b_to_a(t_push_swap *ps);
+/*
+**	reads commands which of each command of algorithm
+*/
 
-void			three_rotation_for_a(t_stack *stack, t_push_swap *ps);
+void					reading_commands(t_push_swap *ps, int ac, char **av);
 
-void			three_rotation_for_b(t_stack *stack, t_push_swap *ps);
+/*
+**	finds next min elem in stack a
+*/
 
+int						min_elem_sort(t_push_swap *ps, int min);
+
+/*
+**	sorting in case of 2 or 3 elements in stack
+*/
+
+void					small_stack(t_stack *stack, t_push_swap *ps, char ch);
+
+/*
+**	replace elements from stack a to stack b
+*/
+
+void					from_a_to_b(t_push_swap *ps, int min, int mid);
+
+/*
+**	replace elements from stack b to stack a
+*/
+
+void					from_b_to_a(t_push_swap *ps);
+
+/*
+**	sorts stack a in case of its size == 3
+*/
+
+void					three_rotation_for_a(t_stack *stack, t_push_swap *ps);
+
+/*
+**	sorts stack b in case of its size == 3
+*/
+
+void					three_rotation_for_b(t_stack *stack, t_push_swap *ps);
+
+void					start_of_sorting(t_push_swap *ps);
 
 #endif

@@ -47,5 +47,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/FINAL_OF_PUSH_SWAP.dir/DependInfo.cmake"
+  "CMakeFiles/PUSH_SWAP_FINAL.dir/DependInfo.cmake"
   )

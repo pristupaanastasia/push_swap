@@ -81,5 +81,6 @@ void			prep_sort(t_push_swap *ps)
 			if (ps->b && ps->b->head != NULL && !ft_is_sorted(ps))
 				quick_sort_b(ps);
 		}
+		ps->is_sorted = 1;
 	}
 }

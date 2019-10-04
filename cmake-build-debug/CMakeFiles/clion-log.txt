@@ -1,4 +1,4 @@
-/Users/samymone/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/samymone/Desktop/FINAL_OF_PUSH_SWAP
+/Users/samymone/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/samymone/Desktop/PUSH_SWAP_FINAL
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/samymone/Desktop/FINAL_OF_PUSH_SWAP/cmake-build-debug
+-- Build files have been written to: /Users/samymone/Desktop/PUSH_SWAP_FINAL/cmake-build-debug

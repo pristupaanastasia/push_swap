@@ -1,16 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
-project(FINAL_OF_PUSH_SWAP C)
+project(PUSH_SWAP_FINAL C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(.)
 include_directories(includes)
-include_directories(libft)
 include_directories(libft/includes)
-include_directories(libft/srcs)
-include_directories(src)
 
-add_executable(FINAL_OF_PUSH_SWAP
+add_executable(PUSH_SWAP_FINAL
         includes/ft_push_swap.h
         libft/includes/error.h
         libft/includes/ft_types.h
@@ -92,8 +88,9 @@ add_executable(FINAL_OF_PUSH_SWAP
         src/ft_validation.c
         src/is_sorted.c
         src/px.c
+        src/rotations.c
         src/rrx.c
         src/rx.c
         src/sort_stacks.c
         src/sorting_algorythm.c
-        src/sx.c src/rotations.c)
+        src/sx.c)
