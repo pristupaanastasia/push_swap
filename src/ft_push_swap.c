@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:10:23 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/03 18:10:25 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/04 18:03:40 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int						main(int ac, char **av)
 	t_push_swap			ps;
 	char				**input;
 	int					i;
-	int					j;
+	static int			j = 0;
 
 	if (ac == 1)
 		return (0);
@@ -85,11 +85,9 @@ int						main(int ac, char **av)
 		input = ft_strsplit(av[1], ' ');
 		while (input[i])
 			i++;
-		if (i == 0)
+		if (i++ == 0)
 			return (0);
-		i++;
 		av = (char**)malloc(sizeof(char*) * i);
-		j = 0;
 		while (j++ < i - 1)
 			av[j] = ft_strdup(input[j - 1]);
 		ac = i;
@@ -98,5 +96,5 @@ int						main(int ac, char **av)
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack(ac, av);
 	start_of_sorting(&ps);
-	exit (1);
+	exit(1);
 }

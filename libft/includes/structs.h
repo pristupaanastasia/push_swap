@@ -6,14 +6,13 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 11:28:25 by sleonard          #+#    #+#             */
-/*   Updated: 2019/10/02 21:45:18 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/04 18:06:03 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-#include "../../includes/ft_push_swap.h"
+# include "../../includes/ft_push_swap.h"
 
 typedef struct			s_flags
 {

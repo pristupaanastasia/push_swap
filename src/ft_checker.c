@@ -6,7 +6,7 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:09:56 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/04 16:59:34 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/04 18:04:57 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static t_stack		*ft_init_stack(int ac, char **av)
 	return (stack);
 }
 
-
 void		ft_make_command(t_push_swap *ps, char *line)
 {
 	if (ft_strequ(line, "sa"))
@@ -109,7 +108,8 @@ void		reading_commands(t_push_swap *ps)
 		if (ret == 0)
 		{
 			ps->is_sorted = ft_is_sorted(ps);
-			(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) : ft_putendl_fd("KO", 1);
+			(ps->is_sorted == 1) ? ft_putendl_fd("OK", 1) :
+			ft_putendl_fd("KO", 1);
 		}
 		if (ret == -1)
 			ft_error();
@@ -131,9 +131,8 @@ int			main(int ac, char **av)
 		input = ft_strsplit(av[1], ' ');
 		while (input[i])
 			i++;
-		if (i == 0)
+		if (i++ == 0)
 			return (0);
-		i++;
 		av = (char**)malloc(sizeof(char*) * i);
 		j = 0;
 		while (j++ < i - 1)
