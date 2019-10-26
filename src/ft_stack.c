@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 18:10:48 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/04 17:11:04 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/04 18:18:35 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/04 18:18:37 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,21 @@ void					ft_cleanelem(t_elem **elem)
 
 void					ft_cleanstack(t_stack **stack)
 {
-	t_elem				*cur;
-	t_elem				*next;
-	int					i;
+	t_elem		*cur;
+	t_elem		*tmp;
 
-	if ((*stack)->head)
+	if (!(cur = (*stack)->head))
+		return ;
+	while (cur != (*stack)->tail)
 	{
-		cur = (*stack)->head;
-		next = cur->next;
-		i = (*stack)->size;
-		while (i-- > 0)
-		{
-			free(cur);
-			cur = next;
-			if (cur->next)
-				next = cur->next;
-			else
-				next = NULL;
-		}
-		(*stack)->size = 0;
-		free(*stack);
-		*stack = NULL;
+		tmp = cur->next;
+		cur->next = NULL;
+		cur->num = 0;
+		cur->prev = NULL;
+		free(cur);
+		cur = tmp;
 	}
+	free((*stack)->tail);
 }
 
 void					ft_addstack(t_elem *elem, t_stack **stack)

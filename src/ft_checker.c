@@ -5,43 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 18:09:56 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/04 18:04:57 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/04 18:17:55 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/26 19:59:14 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static void				ft_clean_av(int ac, char **av)
-{
-	int		i;
-
-	i = 1;
-	if (av)
-	{
-		while (i < ac && av[i])
-		{
-			ft_strdel(&av[i]);
-			i++;
-		}
-		free(av);
-	}
-}
-
-static void				ft_clean_input(int n, char **input)
-{
-	int		i;
-
-	i = 0;
-	while (i < n)
-	{
-		ft_strdel(&input[i]);
-		i++;
-	}
-	free(input);
-}
-
-static t_stack		*ft_init_stack(int ac, char **av)
+static t_stack			*ft_init_stack(int ac, char **av)
 {
 	t_elem				*elem;
 	t_stack				*stack;
@@ -63,7 +34,16 @@ static t_stack		*ft_init_stack(int ac, char **av)
 	return (stack);
 }
 
-void		ft_make_command(t_push_swap *ps, char *line)
+void					fatal(t_push_swap *ps, char *line)
+{
+	ft_error();
+	ps->a->head ? ft_cleanstack(&ps->a) : 1;
+	ps->b->head ? ft_cleanstack(&ps->b) : 1;
+	free(line);
+	exit(0);
+}
+
+void					ft_make_command(t_push_swap *ps, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_sa(ps);
@@ -88,13 +68,13 @@ void		ft_make_command(t_push_swap *ps, char *line)
 	else if (ft_strequ(line, "rrr"))
 		ft_rrr(ps);
 	else
-		ft_error();
+		fatal(ps, line);
 }
 
-void		reading_commands(t_push_swap *ps)
+void					reading_commands(t_push_swap *ps)
 {
-	int			ret;
-	char		*line;
+	int					ret;
+	char				*line;
 
 	ret = 1;
 	while (ret == 1)
@@ -112,16 +92,19 @@ void		reading_commands(t_push_swap *ps)
 			ft_putendl_fd("KO", 1);
 		}
 		if (ret == -1)
+		{
+			free(line);
 			ft_error();
+		}
+		free(line);
 	}
 }
 
-int			main(int ac, char **av)
+int						main(int ac, char **av)
 {
 	t_push_swap			ps;
 	char				**input;
 	int					i;
-	int					j;
 
 	if (ac == 1)
 		return (0);
@@ -132,15 +115,15 @@ int			main(int ac, char **av)
 		while (input[i])
 			i++;
 		if (i++ == 0)
+		{
+			free(input);
 			return (0);
-		av = (char**)malloc(sizeof(char*) * i);
-		j = 0;
-		while (j++ < i - 1)
-			av[j] = ft_strdup(input[j - 1]);
+		}
+		av = parse_input(av, i, input);
 		ac = i;
-		ft_clean_input(j, input);
 	}
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack(ac, av);
 	reading_commands(&ps);
+	exit(0);
 }

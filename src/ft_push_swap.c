@@ -3,43 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
+/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 18:10:23 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/04 18:03:40 by mriley           ###   ########.fr       */
+/*   Created: 2019/10/04 18:19:07 by samymone          #+#    #+#             */
+/*   Updated: 2019/10/04 18:19:09 by samymone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-
-static void				ft_clean_av(int ac, char **av)
-{
-	int		i;
-
-	i = 1;
-	if (av)
-	{
-		while (i < ac && av[i])
-		{
-			ft_strdel(&av[i]);
-			i++;
-		}
-		free(av);
-	}
-}
-
-static void				ft_clean_input(int n, char **input)
-{
-	int		i;
-
-	i = 0;
-	while (i < n)
-	{
-		ft_strdel(&input[i]);
-		i++;
-	}
-	free(input);
-}
 
 static t_stack			*ft_init_stack(int ac, char **av)
 {
@@ -75,7 +46,6 @@ int						main(int ac, char **av)
 	t_push_swap			ps;
 	char				**input;
 	int					i;
-	static int			j = 0;
 
 	if (ac == 1)
 		return (0);
@@ -86,12 +56,12 @@ int						main(int ac, char **av)
 		while (input[i])
 			i++;
 		if (i++ == 0)
+		{
+			free(input);
 			return (0);
-		av = (char**)malloc(sizeof(char*) * i);
-		while (j++ < i - 1)
-			av[j] = ft_strdup(input[j - 1]);
+		}
+		av = parse_input(av, i, input);
 		ac = i;
-		ft_clean_input(j, input);
 	}
 	ft_bzero(&ps, sizeof(t_push_swap));
 	ps.a = ft_init_stack(ac, av);

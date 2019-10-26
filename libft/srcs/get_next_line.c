@@ -3,73 +3,132 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 15:27:44 by samymone          #+#    #+#             */
-/*   Updated: 2019/06/04 15:38:41 by samymone         ###   ########.fr       */
+/*   Created: 2019/04/29 15:33:30 by mriley            #+#    #+#             */
+/*   Updated: 2019/10/26 20:52:20 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
+#include "../includes/get_next_line.h"
 
-static int	returned_line(char **s, char **line, int fd)
+static t_list	*ft_newcash(t_list *cash, void *str, int t)
 {
-	char	*tmp;
-	int		i;
+	cash->content = ft_memalloc(t + 1);
+	if (cash->content == NULL)
+		return (NULL);
+	cash->content = ft_memcpy(cash->content, str, t);
+	((char *)cash->content)[t] = 0;
+	cash->content_size = t;
+	return (cash);
+}
 
+static t_list	*gnl_read(int fd)
+{
+	t_list	*cash1;
+	char	buf[BUFF_SIZE + 1];
+	int		h[3];
+	char	*str;
+	char	*tmp;
+
+	ft_bzero(h,  sizeof(h));
+	str = NULL;
+	while ((h[1] = read(fd, buf, BUFF_SIZE)) > 0 && h[2] == 0)
+	{
+		h[0] = h[0] + h[1];
+		buf[h[1]] = '\0';
+		if (fd == 0 && ft_strchr(buf, '\n') != NULL)
+			break ;
+		tmp = (str == NULL) ? ft_strdup(buf) : ft_strjoin(str, buf);
+		free(str);
+		str = tmp;		
+	}
+	if (h[0] == 0 || str == NULL)
+		return (NULL);
+	cash1 = ft_lstnew(str, h[0]);
+	free(str);
+	return (cash1);
+}
+
+static char		*ft_line(t_list *cash, char **line)
+{
+	int		j;
+	int		k;
+	char	*tmp;
+
+	j = 0;
+	k = 0;
+	if (cash->content == NULL)
+	{
+		*line = ft_memalloc(1);
+		return (NULL);
+	}
+	k = ft_strlen((char*)cash->content);
+	tmp = cash->content;
+	while (tmp[j] != '\n' && tmp[j] != '\0')
+		j++;	
+	if (j == 0)
+		*line = ft_strnew(1);
+	else
+		*line = ft_strsub((char*)cash->content, 0, j);
+	if (!*line)
+		return (NULL);
+	if (j == k)
+	{
+		free(tmp);
+		return (NULL);
+	}
+	cash->content = ft_strsub((char*)cash->content, j + 1, k - j);
+	free(tmp);
+	return (cash->content);
+}
+
+static void		gnl_free(t_list *cash1, t_list *cash, char **line)
+{
+	cash->content = ft_line(cash, line);
+	if (cash1)
+		free(cash1->content);
+	free(cash1);
+}
+
+int				get_next_line(int const fd, char **line)
+{
+	static t_list	*head;
+	t_list			*cash;
+	t_list			*cash1;
+	char			t[BUFF_SIZE];
+	int				i;
+
+	if (head == NULL)
+		head = ft_lstnew(NULL, 0);
+	if (fd < 0 || !line || BUFF_SIZE < 1 || (i = read(fd, t, 0)) < 0)
+		return (-1);
+	cash1 = gnl_read(fd);
+	cash = head;
 	i = 0;
-	while (s[fd][i] != '\n' && s[fd][i] != '\0')
-		i++;
-	if (s[fd][i] == '\n')
+	while (i++ <= fd)
 	{
-		if (!(*line = ft_strsub(s[fd], 0, i)))
-			return (-1);
-		tmp = ft_strsub(s[fd], i + 1, ft_strlen(s[fd]));
-		ft_strdel(&s[fd]);
-		s[fd] = ft_strsub(tmp, 0, ft_strlen(tmp));
-		ft_strdel(&tmp);
-		if (s[fd][0] == '\0')
-			ft_strdel(&s[fd]);
+		if (cash->next == NULL)
+			cash->next = ft_lstnew(NULL, 0);
+		cash = cash->next;
 	}
-	else if (s[fd][i] == '\0')
-	{
-		if (!(*line = ft_strsub(s[fd], 0, i)))
-			return (-1);
-		ft_strdel(&s[fd]);
-	}
+	if (cash1 && cash)
+		cash = ft_newcash(cash, cash1->content, cash1->content_size);
+	gnl_free(cash1, cash, line);
+	if ((*line)[0] == '\0' && !cash->content)
+		return (0);
 	return (1);
 }
-
-int			free_func(char **s, int fd)
+/*int main(int argc,char **argv)
 {
-	free(s[fd]);
-	return (-1);
-}
+	int fd;
+	char *line;
 
-int			get_next_line(const int fd, char **line)
-{
-	static char	*s[10240];
-	int			ret;
-	char		buf[BUFF_SIZE + 1];
-	char		*tmp;
-
-	if (!line || BUFF_SIZE <= 0 || fd < 0 || fd > 10240)
-		return (-1);
-	s[fd] = (s[fd] == NULL) ? ft_strnew(0) : s[fd];
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	fd = open(argv[1], O_RDONLY);
+	while (get_next_line(0,&line) != 0)
 	{
-		buf[ret] = '\0';
-		tmp = s[fd];
-		if (!(s[fd] = ft_strjoin(s[fd], buf)))
-			return (free_func(s, fd));
-		free(tmp);
-		if (ft_strchr(s[fd], '\n'))
-			break ;
+		printf("%s\n",line);
+		free(line);
 	}
-	if (ret < 0)
-		return (-1);
-	else if (ret == 0 && (s[fd] == NULL || s[fd][0] == '\0'))
-		return (0);
-	return (returned_line(s, line, fd));
-}
+	return(0);
+}*/

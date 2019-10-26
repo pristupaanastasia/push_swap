@@ -1,2 +1,2 @@
 # push_swap
-realization of sorting algorythm
+Realization of quick sort on 2 stacks

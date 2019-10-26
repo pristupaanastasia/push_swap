@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mriley <mriley@student.42.fr>              +#+  +:+       +#+         #
+#    By: samymone <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/02 21:39:12 by mriley            #+#    #+#              #
-#    Updated: 2019/10/02 21:50:11 by mriley           ###   ########.fr        #
+#    Created: 2019/10/04 18:35:51 by samymone          #+#    #+#              #
+#    Updated: 2019/10/04 18:35:53 by samymone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,13 @@ FLAGS = -Wall -Wextra -Werror
 
 SRC_PUSH_SWAP = ./src/ft_error.c ./src/ft_stack.c ./src/ft_validation.c \
 				./src/px.c ./src/rrx.c ./src/sx.c ./src/is_sorted.c \
-			    ./src/sort_stacks.c ./src/sorting_algorythm.c ./src/ft_push_swap.c ./src/rx.c \
-				./src/rotations.c ./src/extra_functions.c
+			    ./src/sort_stacks.c ./src/sorting_algorythm.c ./src/rx.c \
+			    ./src/ft_push_swap.c ./src/rotations.c ./src/extra_functions.c \
+			    ./src/cleaner.c
 
 SRC_CHECKER = ./src/ft_error.c ./src/ft_stack.c ./src/ft_validation.c ./src/px.c \
-			          ./src/rrx.c ./src/rx.c ./src/sx.c ./src/is_sorted.c ./src/ft_checker.c
+			          ./src/rrx.c ./src/rx.c ./src/sx.c ./src/is_sorted.c \
+			          ./src/ft_checker.c ./src/cleaner.c
 HEADER = ./includes/ft_push_swap.h
 LIB = ./libft/libft.a
 

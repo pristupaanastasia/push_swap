@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samymone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:14:39 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/03 18:14:40 by samymone         ###   ########.fr       */
+/*   Updated: 2019/10/26 18:54:22 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,5 +281,14 @@ void					three_rotation_for_a(t_stack *stack, t_push_swap *ps);
 void					three_rotation_for_b(t_stack *stack, t_push_swap *ps);
 
 void					start_of_sorting(t_push_swap *ps);
+
+void					ft_clean_av(int ac, char **av);
+
+void					ft_clean_input(int n, char **input);
+
+char					**parse_input(char **av, int i, char **input);
+
+void					ft_make_command(t_push_swap *ps, char *line);
+void					kostil_n2(t_push_swap *ps);
 
 #endif

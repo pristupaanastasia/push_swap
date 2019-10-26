@@ -56,3 +56,15 @@ unsigned char			ft_input_validation(int ac, char **av)
 {
 	return (ft_all_int(ac, av) && ft_no_duplicates(ac, av));
 }
+
+char					**parse_input(char **av, int i, char **input)
+{
+	int j;
+
+	j = 0;
+	av = (char**)malloc(sizeof(char*) * i);
+	while (j++ < i - 1)
+		av[j] = ft_strdup(input[j - 1]);
+	ft_clean_input(j, input);
+	return (av);
+}
