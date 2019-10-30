@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: samymone <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mriley <mriley@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 18:35:51 by samymone          #+#    #+#              #
-#    Updated: 2019/10/04 18:35:53 by samymone         ###   ########.fr        #
+#    Updated: 2019/10/30 16:56:54 by mriley           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC_CHECKER = ./src/ft_error.c ./src/ft_stack.c ./src/ft_validation.c ./src/px.c
 			          ./src/ft_checker.c ./src/cleaner.c
 HEADER = ./includes/ft_push_swap.h
 LIB = ./libft/libft.a
+LIB_PRINTF = ./ft_printf/libftprintf.a
 
 OBJ_PS = $(SRC_PUSH_SWAP:.c=.o)
 
@@ -37,22 +38,26 @@ all: $(CHECKER) $(PUSH_SWAP)
 %.o: %.c
 	    gcc $(FLAGS) -c -o $@ $< -g
 
-$(PUSH_SWAP): $(LIB) $(OBJ_PS)
-	    gcc $(FLAGS) -I $(HEADER) $(LIB) -o $(PUSH_SWAP) $(SRC_PUSH_SWAP) -g
+$(PUSH_SWAP): $(LIB) $(LIB_PRINTF) $(OBJ_PS)
+	    gcc $(FLAGS) -I $(HEADER) $(LIB) $(LIB_PRINTF) -o $(PUSH_SWAP) $(SRC_PUSH_SWAP) -g
 
-$(CHECKER): $(LIB) $(OBJ_CK)
-	    gcc $(FLAGS) -I $(HEADER)  $(LIB) -o $(CHECKER) $(SRC_CHECKER) -g
+$(CHECKER): $(LIB)  $(LIB_PRINTF) $(OBJ_CK)
+	    gcc $(FLAGS) -I $(HEADER)  $(LIB) $(LIB_PRINTF) -o $(CHECKER) $(SRC_CHECKER) -g
 
 $(LIB):
 	    $(MAKE) -C ./libft/
+$(LIB_PRINTF):
+		$(MAKE) -C ./ft_printf/
 
 clean:
 	    $(MAKE) clean -C ./libft
+		$(MAKE) clean -C ./ft_printf
 		rm -f $(OBJ_PS)
 		rm -f $(OBJ_CK)
 
 fclean: clean
 	    $(MAKE) fclean -C ./libft
+		$(MAKE) fclean -C ./ft_printf
 		rm -f $(PUSH_SWAP)
 		rm -f $(CHECKER)
 

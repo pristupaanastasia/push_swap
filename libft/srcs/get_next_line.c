@@ -6,7 +6,7 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 15:33:30 by mriley            #+#    #+#             */
-/*   Updated: 2019/10/26 20:52:20 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/30 18:17:43 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static t_list	*gnl_read(int fd)
 	char	*str;
 	char	*tmp;
 
-	ft_bzero(h,  sizeof(h));
+	ft_bzero(h, sizeof(h));
 	str = NULL;
 	while ((h[1] = read(fd, buf, BUFF_SIZE)) > 0 && h[2] == 0)
 	{
@@ -41,7 +41,7 @@ static t_list	*gnl_read(int fd)
 			break ;
 		tmp = (str == NULL) ? ft_strdup(buf) : ft_strjoin(str, buf);
 		free(str);
-		str = tmp;		
+		str = tmp;
 	}
 	if (h[0] == 0 || str == NULL)
 		return (NULL);
@@ -66,14 +66,9 @@ static char		*ft_line(t_list *cash, char **line)
 	k = ft_strlen((char*)cash->content);
 	tmp = cash->content;
 	while (tmp[j] != '\n' && tmp[j] != '\0')
-		j++;	
-	if (j == 0)
-		*line = ft_strnew(1);
-	else
-		*line = ft_strsub((char*)cash->content, 0, j);
-	if (!*line)
-		return (NULL);
-	if (j == k)
+		j++;
+	*line = (j == 0) ? ft_strnew(1) : ft_strsub((char*)cash->content, 0, j);
+	if (j == k || !*line)
 	{
 		free(tmp);
 		return (NULL);
@@ -119,16 +114,3 @@ int				get_next_line(int const fd, char **line)
 		return (0);
 	return (1);
 }
-/*int main(int argc,char **argv)
-{
-	int fd;
-	char *line;
-
-	fd = open(argv[1], O_RDONLY);
-	while (get_next_line(0,&line) != 0)
-	{
-		printf("%s\n",line);
-		free(line);
-	}
-	return(0);
-}*/

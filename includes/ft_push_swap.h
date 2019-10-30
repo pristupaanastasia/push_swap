@@ -6,7 +6,7 @@
 /*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:14:39 by samymone          #+#    #+#             */
-/*   Updated: 2019/10/26 18:54:22 by mriley           ###   ########.fr       */
+/*   Updated: 2019/10/30 17:00:40 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PUSH_SWAP_H
 
 # include "../libft/includes/libft.h"
+# include "../ft_printf/ft_printf.h"
 # include <stdio.h>
 
 typedef struct			s_elem
@@ -290,5 +291,6 @@ char					**parse_input(char **av, int i, char **input);
 
 void					ft_make_command(t_push_swap *ps, char *line);
 void					kostil_n2(t_push_swap *ps);
+void					kostil_n3(t_push_swap *ps);
 
 #endif
